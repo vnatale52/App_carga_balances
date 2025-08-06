@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga y Filtro de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Carga y Filtro de Archivos de Datos</h1>
+        <p>Selecciona los archivos y define los filtros para generar el reporte.</p>
+
+        <form id="uploadForm">
+
+            <fieldset>
+                <legend>Archivos Requeridos</legend>
+                <div class="form-group">
+                    <label for="balhistFile">Balance Histórico (Balhist.txt)</label>
+                    <input type="file" id="balhistFile" name="balhist" accept=".txt" required>
+                </div>
+                <div class="form-group">
+                    <label for="cuentasFile">Plan de Cuentas (Cuentas.txt)</label>
+                    <input type="file" id="cuentasFile" name="cuentas" accept=".txt" required>
+                </div>
+                <div class="form-group">
+                    <label for="nominaFile">Nómina de Entidades (Nomina.txt)</label>
+                    <input type="file" id="nominaFile" name="nomina" accept=".txt" required>
+                </div>
+                <div class="form-group">
+                    <label for="indicesFile">Índices de Precios (Indices.xlsx)</label>
+                    <input type="file" id="indicesFile" name="indices" accept=".xlsx" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Filtros de Datos</legend>
+                <div class="filter-section">
+                    <h3>Filtros para Balance Histórico (Balhist.txt)</h3>
+                    <div class="form-group">
+                        <label for="entidadInput">Número de Entidad:</label>
+                        <input type="number" id="entidadInput" name="entidad" placeholder="Ej: 7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="balhistDesdeInput">Fecha Desde:</label>
+                        <input type="month" id="balhistDesdeInput" name="balhistDesde" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="balhistHastaInput">Fecha Hasta:</label>
+                        <input type="month" id="balhistHastaInput" name="balhistHasta" required>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Filtros para Índices (Indices.xlsx)</h3>
+                    <div class="form-group">
+                        <label for="indicesDesdeInput">Mes Desde:</label>
+                        <input type="month" id="indicesDesdeInput" name="indicesDesde" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="indicesHastaInput">Mes Hasta:</label>
+                        <input type="month" id="indicesHastaInput" name="indicesHasta" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit">Generar Reporte Excel</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <script src="scripts.js" type="module"></script>
+</body>
+</html>
