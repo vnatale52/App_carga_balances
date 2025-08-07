@@ -24,7 +24,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
  
     //  'http://localhost:3000/upload' reempazado con https://app-carga-balances.onrender.com   para producción,  con la ese, s
     try {
-        const response = await fetch('https://app-carga-balances.onrender.com', {
+        const response = await fetch('/upload', {
             method: 'POST',
             body: formData,
         });
@@ -59,4 +59,5 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         statusDiv.style.color = 'red';
         console.error('Detalle del error:', error);
     }
+
 });
