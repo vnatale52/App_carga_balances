@@ -22,8 +22,10 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     statusDiv.textContent = 'Cargando y procesando...';
     statusDiv.style.color = 'orange';
 
-    try {
-        const response = await fetch('http://localhost:3000/upload', {
+   
+    // para producción on render cambiado  'http://localhost:3000/upload'   por   'https://app-carga-balances.onrender.com/upload'
+     try {
+        const response = await fetch('https://app-carga-balances.onrender.com/upload'), {
             method: 'POST',
             body: formData,
         });
@@ -58,4 +60,5 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         statusDiv.style.color = 'red';
         console.error('Detalle del error:', error);
     }
+
 });
