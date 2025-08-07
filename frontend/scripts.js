@@ -25,7 +25,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
    
     // para producción on render cambiado  'http://localhost:3000/upload'   por   'https://app-carga-balances.onrender.com/upload'
      try {
-        const response = await fetch('https://app-carga-balances.onrender.com/upload/'), {
+        const response = await fetch('https://app-carga-balances.onrender.com/upload'), {
             method: 'POST',
             body: formData,
         });
@@ -62,4 +62,5 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     }
 
 });
+
 
