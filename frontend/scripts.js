@@ -26,7 +26,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     //  o sólo ('/upload')
 
     try {
-        const response = await fetch('/upload' , {
+        const response = await fetch('/upload') , {
             method: 'POST',
             body: formData ,
         });
@@ -63,5 +63,6 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     }
 
 });
+
 
 
